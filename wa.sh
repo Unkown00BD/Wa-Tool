@@ -37,6 +37,7 @@ case "$option" in
                   ;;
                 1) cd modules
                    read -p "Enter Dork To Scrape Links From Google:  " dork
+                   echo "Collecting DATA PLS WAIT"
                    python3 gs.py $dork >> $dork.scrapped.txt
                    echo "Result Saved in " | pwd "/ $dork.scrapped.txt"
                    cd ..
@@ -46,7 +47,8 @@ case "$option" in
                   curl -I $url
                   read -p "Enter Any Key To return"
                   ;;
-              3) echo "Getting Sql Vuln. Site From Google Using Dorks:"
+              3) echo "Getting Sql Vuln. Site From Google Using Dorks"
+                 echo "Collecting Data Please Wait...."
                 cd modules
                 python3 gs.py inurl:news/news.php?id= >>sql.txt
                 python3 gs.py inurl:php?id=* >>_=*.sql1.txt
